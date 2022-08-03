@@ -96,3 +96,9 @@ def cuantos_paquetes(figus_total, figus_paquete):
             album[figu_nueva-1] = figu_nueva
         count_paquetes = count_paquetes + 1
     return count_paquetes
+
+def experimentar_con_paquetes(figus_total, figus_paquete, n_rep):
+    lista_resultados = []
+    for n_rep in range (0, n_rep, 1):
+        lista_resultados.append(cuantos_paquetes(figus_total, figus_paquete))
+    return lista_resultados
