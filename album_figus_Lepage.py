@@ -18,7 +18,7 @@ import statistics
 def crear_album (n_figus):
     album = []
     i = 0
-    while i < n_figus:
+    while i < n_figus: #esto sería de 0 hasta n_figus, excluyente. es lo mismo que decir "for i in range (0, n_figus), también es excluyente
         album = album + [0]
         i = i+1
     return album
