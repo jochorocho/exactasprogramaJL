@@ -24,7 +24,7 @@ def crear_album (n_figus):
     return album
 
 
-
+"""
 def hay_alguno(lista, elem):
     i = 0
     hay_alguno = False
@@ -33,11 +33,11 @@ def hay_alguno(lista, elem):
         if lista[i] == elem:
             hay_alguno = True
     return hay_alguno
-            
+"""
 
 
 def comprar_una_figu(figus_total):
-    return random.randint(0, figus_total)
+    return random.randint(1, figus_total)
     
 
 def chequear_album(album):
@@ -72,10 +72,27 @@ def experimento(figus_total, n_rep):
     for i in range (0, len(lista), 1):
         suma = suma + lista[i]
         i = i+1
-    statistics.mean(suma)"""
+    statistics.mean(suma)
+"""
 
 def promedio_experimentos(figus_total,n_rep):
     promedio = statistics.mean(experimento(figus_total,n_rep))
     return promedio
 
-print(promedio_experimentos(6,200))
+def  generar_paquete(figus_total, figus_paquete):
+    lista_paquete = []
+    for i in range (0, figus_paquete, 1):
+        lista_paquete.append(comprar_una_figu(figus_total))
+    return lista_paquete
+
+                    
+def cuantos_paquetes(figus_total, figus_paquete):
+    album = crear_album(figus_total)
+    count_paquetes = 0
+    while chequear_album(album):
+        paquete = generar_paquete(figus_total, figus_paquete)
+        for i in range (0, len(paquete), 1):
+            figu_nueva = paquete[i]
+            album[figu_nueva-1] = figu_nueva
+        count_paquetes = count_paquetes + 1
+    return count_paquetes
