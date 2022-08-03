@@ -25,7 +25,7 @@ def crear_album (n_figus):
 
 
 """
-def hay_alguno(lista, elem):
+def hay_alguno(lista, elem): #codigo que pide la consigna hecho por mi
     i = 0
     hay_alguno = False
     while i < len(lista) and hay_alguno == False:
@@ -33,6 +33,15 @@ def hay_alguno(lista, elem):
         if lista[i] == elem:
             hay_alguno = True
     return hay_alguno
+
+def hay_alguno(album, elem):
+    esta = true
+    i= 0
+    while i < len(album):
+        if album[i] == elem:
+            esta = false
+            i = i + 1
+    return esta
 """
 
 
