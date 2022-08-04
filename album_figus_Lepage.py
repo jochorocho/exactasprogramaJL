@@ -111,3 +111,10 @@ def experimentar_con_paquetes(figus_total, figus_paquete, n_rep):
     for n_rep in range (0, n_rep, 1):
         lista_resultados.append(cuantos_paquetes(figus_total, figus_paquete))
     return lista_resultados
+"""
+def dinamica(n, a, p, f):
+    bosque = generar_bosque_vacio(n)
+    for t in range (1, a, 1):
+        generar_brotes(bosque, p)
+        generar_rayos(bosque, f)
+"""
