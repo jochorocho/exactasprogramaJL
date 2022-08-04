@@ -8,6 +8,8 @@ Created on Wed Aug  3 19:05:02 2022
 
 import random
 import statistics
+import matplotlib.pyplot as plt
+
 
 def suceso_aleatorio(p):
     resultado = False
