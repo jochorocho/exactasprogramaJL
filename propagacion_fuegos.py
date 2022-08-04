@@ -7,7 +7,7 @@ Created on Wed Aug  3 19:05:02 2022
 """
 
 import random
-
+import statistics
 
 def suceso_aleatorio(p):
     resultado = False
@@ -54,10 +54,26 @@ def propagacion(bosque):
             bosque[j-1] = -1
             j = j - 1
     return bosque
-            
 
+def limpieza(bosque):
+    for i in range (0, len(bosque), 1):
+        if bosque[i] == -1:
+            bosque[i] = 0
+    return bosque
 
-
+def dinamica(n, a, p, f):
+    count_list = []
+    bosque = generar_bosque_vacio(n)
+    for t in range (1, a, 1):
+        count_arboles = 0
+        generar_brotes(bosque, p)
+        generar_rayos(bosque, f)
+        propagacion(bosque)
+        limpieza(bosque)
+        count_list.append(count_tipo(bosque, 1)
+    return statistics.mean(count_list)
+        
+"""
 b_1 = [1, 1, 1, -1, 0, 0, 0, -1, 1, 0]
 print(propagacion(b_1))
 
@@ -66,10 +82,7 @@ print(propagacion(b_2))
 
 b_3 = [-1, 1, 0, 1, 0, -1, 1, 0, 0, 1, -1]
 print(propagacion(b_3))
-        
-            
-
-
+"""       
 """  
 bosque_t0 = generar_bosque_vacio(10)
 print(bosque_t0)
