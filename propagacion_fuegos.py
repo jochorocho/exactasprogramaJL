@@ -74,7 +74,15 @@ def dinamica(n, a, p, f):
         limpieza(bosque)
         count_list.append(count_tipo(bosque, 1)
     return statistics.mean(count_list)
-        
+                          
+def graficar_dinamicas(p, dinamica):
+    p_list = []
+                          for p in range (0, 1, 0.1):
+          
+        plt.plot(p, dinamica(10 , 500, p ,0.02))
+                          
+
+                          
 """
 b_1 = [1, 1, 1, -1, 0, 0, 0, -1, 1, 0]
 print(propagacion(b_1))
