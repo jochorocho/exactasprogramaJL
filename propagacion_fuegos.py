@@ -63,7 +63,7 @@ def limpieza(bosque):
             bosque[i] = 0
     return bosque
 
-def dinamica(n, a, p, f):
+def dinamica(n, a, p, f): #n = numero de celdas, a = años de repeticion, p = probabilidad de brotes, f = probabilidad de fuego 
     count_list = []
     bosque = generar_bosque_vacio(n)
     for t in range (1, a, 1):
@@ -75,14 +75,11 @@ def dinamica(n, a, p, f):
         count_list.append(count_tipo(bosque, 1)
     return statistics.mean(count_list)
                           
-def graficar_dinamicas(p, dinamica):
-    p_list = []
-                          for p in range (0, 1, 0.1):
-          
-        plt.plot(p, dinamica(10 , 500, p ,0.02))
-                          
-
-                          
+def graficar_dinamicas(intervalo_p, dinamica):
+    x_axis = np.arrange(0, (1+intervalo_p), intervalo_p)
+    y_axis = dinamica(10,500, invervalo_p, 0.02)
+    plt.plot(x_axis, y_axis)
+             
 """
 b_1 = [1, 1, 1, -1, 0, 0, 0, -1, 1, 0]
 print(propagacion(b_1))
